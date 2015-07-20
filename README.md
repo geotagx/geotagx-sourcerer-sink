@@ -11,6 +11,10 @@ TODO:
 
 * Add this repository as a submodule in the *root* directory of your GeoTag-X installation.
 * Use the `virtualenv` that you use to run GeoTag-X
+* Install `GeoTag-X Sourcerer Sink` specific dependencies by running
+```bash
+pip install -r geotagx_sourcerer_requirements.txt
+```
 * ```bash
 python geotagx_sourcerer_sink.py
 ```

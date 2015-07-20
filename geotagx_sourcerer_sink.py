@@ -38,14 +38,11 @@ def main():
 					
 					SOURCE_URI = parsedJSONObject['source_uri']
 					IMAGE_URL = parsedJSONObject['image_url']
-					print SOURCE_URI, IMAGE_URL
 					for category in parsedJSONObject['categories']:
 						category_objects = Category.query.filter(Category.short_name == category)
 						for category_object in category_objects:
 							related_projects = Project.query.filter(Project.category == category_object)
 							for related_project in related_projects:
-								print related_project.name
-
 								# Start building Task Object
 								_task_object = Task()
 								_task_object.project_id = related_project.id
@@ -61,7 +58,7 @@ def main():
 
 								db.session.add(_task_object)
 								db.session.commit()
-								print _now(), _task_object								
+								print _now(), _task_object
 			else:
 				print _now(), "GEOTAGX-SOURCERER-QUEUE Empty....."
 
